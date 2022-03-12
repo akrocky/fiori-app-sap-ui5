@@ -7,6 +7,13 @@
     title="View 2" showNavButton="true" navButtonPress="onBack">
     <!-- <Button text="Back" icon="sap-icon://arrow-left"
     press="onBack"></Button> -->
-
+<footer>
+    <Toolbar >
+        <ToolbarSpacer></ToolbarSpacer>
+        <Button text="Order" type="Emphasized"></Button>
+        <Button text="Cancell" type="Reject"></Button>
+    
+    </Toolbar>
+</footer>
 </Page>
 </mvc:View> 

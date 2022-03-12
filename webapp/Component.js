@@ -6,7 +6,9 @@ sap.ui.define([
 	"use strict";
 
 	return UIComponent.extend("emc.hr.payroll.Component", { 
-	metadata:{},
+	metadata:{
+        manifest:"json"
+    },
     init: function () {
        //base constructor  
         UIComponent.prototype.init.apply(this)
