@@ -15,7 +15,11 @@ sap.ui.define([
             oAppCon.to("idView2",{
                 "hi":2
             })
-        } 
+        } ,
+        onITemClick:function(){
+            //this is my current class object- which is our contrler
+            this.onNext() 
+        }
     
     });
 });
