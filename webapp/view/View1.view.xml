@@ -1,0 +1,21 @@
+<mvc:View
+	controllerName="emc.hr.payroll.controller.View1"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	>
+   <Page title="view 1" >
+       <headerContent>
+        <Button text="Go to" icon="sap-icon://arrow-right"
+        press="onNext"></Button> 
+       </headerContent>
+    <!-- <Button text="Go to" icon="sap-icon://arrow-right"
+    press="onNext"></Button> -->
+    <content>
+    <SearchField id="idSF" >
+  </SearchField> 
+  <List id="idList">
+      
+</List>     
+    </content>
+   </Page>
+</mvc:View>
