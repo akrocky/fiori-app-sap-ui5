@@ -44,8 +44,12 @@
     },
     "models": {
       "i18n": {
-        "type": "sap.ui.model.resourceModel",
+        "type": "sap.ui.model.resource.ResourceModel",
         "uri": "i18n/i18n.properties"
+      },
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/mockdata/fruits.json"
       }
     }
   }

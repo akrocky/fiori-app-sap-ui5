@@ -34,7 +34,7 @@ sap.ui.define([
         ///get app container controll object  
         var oAppCon=oView.byId("appCon");
         ///inject view1 view inside container
-        oAppCon.addPage(oView1).addPage(oView2);
+        oAppCon.addMasterPage(oView1).addDetailPage(oView2);
         return oView
     }
     
