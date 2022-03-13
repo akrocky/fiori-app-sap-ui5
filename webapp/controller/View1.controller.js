@@ -52,6 +52,14 @@ sap.ui.define([
             var oList= oEvent.getSource();;
             // remove the item from the list
             oList.removeItem(oSelected)
+        },
+        onDeleteItems:function (oEvent) {
+            var oList= this.getView().byId("idList");
+            var aSelectedItems= oList.getSelectedItems();
+            console.log(aSelectedItems);
+            aSelectedItems.forEach(item => {
+                oList.removeItem(item);
+            })
         }
     
     });

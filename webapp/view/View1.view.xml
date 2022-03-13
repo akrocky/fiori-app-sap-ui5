@@ -13,12 +13,22 @@
     <content>
     <SearchField id="idSF" search="onSearch" liveChange="onSearch">
    </SearchField> 
-  <List id="idList" delete="onDelete" mode="Delete" itemPress="onNavNext" items="{
+  <List id="idList" delete="onDelete" mode="MultiSelect" itemPress="onNavNext" items="{
      path: '/fruits',
      sorter: {
         path: 'name'
      }
   }">
+  <headerToolbar>
+     <Toolbar >
+        <ToolbarSpacer >
+
+        </ToolbarSpacer>
+        <Button icon="sap-icon://delete" press="onDeleteItems">
+
+        </Button>
+     </Toolbar>
+  </headerToolbar>
     <items >
  <ObjectListItem type="Navigation" intro="{taste}" title="{name}" number="{price}" numberUnit="{curr}" icon="{image}"></ObjectListItem>
        <!-- <DisplayListItem 
