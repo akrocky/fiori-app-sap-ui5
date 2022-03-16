@@ -13,7 +13,7 @@
     <content>
     <SearchField id="idSF" search="onSearch" liveChange="onSearch">
    </SearchField> 
-  <List id="idList" delete="onDelete" mode="MultiSelect" itemPress="onNavNext" items="{
+  <List id="idList" delete="onDelete" mode="SingleSelectMaster" itemPress="onNavNext" selectionChange="onFruitSelect" items="{
      path: '/fruits',
      sorter: {
         path: 'name'
@@ -30,7 +30,7 @@
      </Toolbar>
   </headerToolbar>
     <items >
- <ObjectListItem type="Navigation" intro="{taste}" title="{name}" number="{price}" numberUnit="{curr}" icon="{image}"></ObjectListItem>
+ <ObjectListItem  intro="{taste}" title="{name}" number="{price}" numberUnit="{curr}" icon="{image}"></ObjectListItem>
        <!-- <DisplayListItem 
        value="A natural antibiotic" label="Apple"></DisplayListItem>
        <StandardListItem title="Orange" description="The most spurce of vitamin c" icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo3CIeWRMHwTLbYjzvXwVx6fgUmKvezHS9XE1OPQoy_NDTby6Njx64zEPUNio3RMfX5Eg" ></StandardListItem>

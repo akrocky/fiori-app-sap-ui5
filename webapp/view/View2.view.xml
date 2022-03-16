@@ -7,6 +7,9 @@
     title="View 2" showNavButton="true" navButtonPress="onBack">
     <!-- <Button text="Back" icon="sap-icon://arrow-left"
     press="onBack"></Button> -->
+    <content>
+        <Text text="{name}"></Text>
+    </content>
 <footer>
     <Toolbar >
         <ToolbarSpacer></ToolbarSpacer>

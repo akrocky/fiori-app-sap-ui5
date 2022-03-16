@@ -9,7 +9,7 @@ sap.ui.define([
 
 	return Controller.extend("emc.hr.payroll.View1", {
         onInit:function () {
-            
+          this.Router=this.getOwnerComponent().getRouter()  
         },
         onNext:function () {
             // var
@@ -60,6 +60,15 @@ sap.ui.define([
             aSelectedItems.forEach(item => {
                 oList.removeItem(item);
             })
+        },
+        onFruitSelect:function (oEvent) {
+            var oSelectedItem=oEvent.getParameter("listItem")
+           
+            //step 1 get the router object 
+            this.Router.navTo("detail",{
+                fruitId:oSelectedItem.getBindingContext().getPath().split("/")[2]
+            })
+                      
         }
     
     });
