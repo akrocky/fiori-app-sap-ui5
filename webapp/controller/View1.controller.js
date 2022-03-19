@@ -9,7 +9,21 @@ sap.ui.define([
 
 	return Controller.extend("emc.hr.payroll.View1", {
         onInit:function () {
-          this.Router=this.getOwnerComponent().getRouter()  
+          this.Router=this.getOwnerComponent().getRouter() 
+          this.Router.getRoute("master").attachPatternMatched(this.herculis,this); 
+        },
+        herculis:function (oEvent) {
+            
+            var fruitId=oEvent.getParameter("arguments").fruitId;
+            var sPath="/fruits/" + fruitId;   
+              var oList=this.getView.byId("idList")
+              for (let i = 0; i <  oList.getItems().length; i++) {
+                  const element = oList.getItems()[i];
+                  if (element.getBindingContextPath()===sPath) {
+                      break;
+                  }
+                  oList.setSelectedItem(element)
+              }
         },
         onNext:function () {
             // var
