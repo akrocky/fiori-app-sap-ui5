@@ -1,5 +1,5 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
+	 ,
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator"
 ], function(
@@ -10,20 +10,30 @@ sap.ui.define([
 	return Controller.extend("emc.hr.payroll.View1", {
         onInit:function () {
           this.Router=this.getOwnerComponent().getRouter() 
-          this.Router.getRoute("master").attachPatternMatched(this.herculis,this); 
+          this.Router.getRoute("detail").attachPatternMatched(this.herculis,this); 
         },
         herculis:function (oEvent) {
             
-            var fruitId=oEvent.getParameter("arguments").fruitId;
-            var sPath="/fruits/" + fruitId;   
-              var oList=this.getView.byId("idList")
-              for (let i = 0; i <  oList.getItems().length; i++) {
-                  const element = oList.getItems()[i];
-                  if (element.getBindingContextPath()===sPath) {
-                      break;
-                  }
-                  oList.setSelectedItem(element)
+            // var fruitId=oEvent.getParameter("arguments").fruitId;
+            // var sPath="/fruits/" + fruitId; 
+         var sPath=this.extractPath(oEvent)  
+            var element;
+              var oList=this.getView().byId("idList")
+              if (oList.getItems().length>0) {
+                for (let i = 0; i <  oList.getItems().length; i++) {
+                     element = oList.getItems()[i];
+                    if (element.getBindingContextPath()===sPath) {
+                        oList.setSelectedItem(element)
+                        break;
+                    }
+                    
+                }
+                // if (element) {
+                //   oList.setSelectedItem(element)  
+                // }
               }
+              
+              
         },
         onNext:function () {
             // var
@@ -77,7 +87,7 @@ sap.ui.define([
         },
         onFruitSelect:function (oEvent) {
             var oSelectedItem=oEvent.getParameter("listItem")
-           
+            
             //step 1 get the router object 
             this.Router.navTo("detail",{
                 fruitId:oSelectedItem.getBindingContext().getPath().split("/")[2]
