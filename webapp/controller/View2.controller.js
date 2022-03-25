@@ -1,6 +1,8 @@
 sap.ui.define([
-	"emc/hr/payroll/controller/BaseController"
-], function(Controller) {
+	"emc/hr/payroll/controller/BaseController",
+    "sap/ui/core/Fragment"
+], function(BaseController,
+	Fragment) {
 	"use strict";
 
 	return Controller.extend("emc.hr.payroll.controller.View2", {
@@ -14,9 +16,10 @@ sap.ui.define([
             var sText= oEvent.getSource().getText();
             sText='https://google.com?q='+sText;
             window.open(sText)
-        },
+        }, 
         onF4Help:function () {
             alert("this functionlity is under construction, roger copy that ")
+            var oFragment= new Fragment();
         }, 
         onFilter:function () {
             alert("this functionlity is under construction, roger copy that ")

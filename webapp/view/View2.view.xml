@@ -12,26 +12,14 @@
         <IconTabBar >
             <items>
                 <IconTabFilter icon="sap-icon://warning" text="more info">
-                <form:SimpleForm >
-                    <Label text="Color"></Label>
-                    <Text text="{color}" ></Text>
-                    <Label text="Taste"></Label>
-                    <Text text="{taste}"></Text>
-                    <Label text="Price"></Label>
-                    <Text text="{
-                        parts:[{path:'price'},{path:'curr'}],
-                        formatter:'.formatter'
-                    }"></Text>
-                    <Label text="Season"></Label>
-                    <Text text="{season}"></Text>
-                </form:SimpleForm>
+                <core:Fragment  fragmentName="emc.hr.payroll.fragments.moreInfo" type="XML"/>
             </IconTabFilter>
                 <IconTabFilter iconColor="Positive" icon="sap-icon://supplier" text="more info">
                  <Table items="{/supplier}">
                     <headerToolbar>
                         <Toolbar >
                             <ToolbarSpacer ></ToolbarSpacer>
-                            <Button icon="sap-icon://filter" press="onFilter"></Button>
+                              <Button icon="sap-icon://filter" press="onFilter"></Button>
                         </Toolbar>
                     </headerToolbar>
                      <columns>
@@ -45,12 +33,12 @@
                                  <Text text="City"></Text>
                              </header>
                          </Column>
-                         <Column >
+                         <Column minScreenWidth="Tablet" demandPopin="true">
                              <header>
                                  <Text text="Since When"></Text>
                              </header>
                          </Column>
-                         <Column >
+                         <Column minScreenWidth="Tablet">
                              <header>
                                  <Text text="Contact Person"></Text>
                              </header>
@@ -62,8 +50,8 @@
                             <Text text="{name}"></Text>
                             <Input value="{city}" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
                             <Text text="{sinceWhen}"></Text>
-                            <Link text="{person}" press="onLinkPress"></Link>
-                        </cells>     
+                            <Link text="{person}" press="onLinkPress"></Link> 
+                        </cells>      
                          </ColumnListItem>
                      </items>
                  </Table>

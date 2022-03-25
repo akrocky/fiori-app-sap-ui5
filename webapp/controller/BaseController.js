@@ -12,7 +12,7 @@ sap.ui.define([
 	extractPath:function (oEvent) {
         var fruitId=oEvent.getParameter("arguments").fruitId;
            return "/fruits/" + fruitId; 
-    }
+    }   
     
     });
 });

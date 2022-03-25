@@ -1,5 +1,5 @@
 sap.ui.define([
-	 ,
+	"emc/hr/payroll/controller/BaseController",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator"
 ], function(
@@ -19,6 +19,7 @@ sap.ui.define([
          var sPath=this.extractPath(oEvent)  
             var element;
               var oList=this.getView().byId("idList")
+               
               if (oList.getItems().length>0) {
                 for (let i = 0; i <  oList.getItems().length; i++) {
                      element = oList.getItems()[i];
