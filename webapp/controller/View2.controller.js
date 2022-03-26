@@ -1,7 +1,7 @@
 sap.ui.define([
 	"emc/hr/payroll/controller/BaseController",
     "sap/ui/core/Fragment"
-], function(BaseController,
+], function(Controller,
 	Fragment) {
 	"use strict";
 
@@ -18,11 +18,32 @@ sap.ui.define([
             window.open(sText)
         }, 
         onF4Help:function () {
-            alert("this functionlity is under construction, roger copy that ")
-            var oFragment= new Fragment();
+            // alert("this functionlity is under construction, roger copy that ")
+         
+            Fragment.load(
+                {
+                 name:"emc.hr.payroll.fragments.popup",
+                 type:"XML",
+                 id:"city",
+                 Controller:this
+                }  ).then(function (oPopup) {
+                    oPopup.setTitle("Select City")
+                    oPopup.open();
+                })
+ 
         }, 
         onFilter:function () {
             alert("this functionlity is under construction, roger copy that ")
+            Fragment.load(
+                {
+                 name:"emc.hr.payroll.fragments.popup",
+                 type:"XML",
+                 id:"supplier",
+                 Controller:this
+                }  ).then(function (oPopup) {
+                    oPopup.setTitle("Select Supplier")
+                    oPopup.open();
+                })
         },
         herculis:function (oEvent) {
             

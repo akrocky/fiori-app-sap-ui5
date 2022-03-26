@@ -3,7 +3,7 @@
 	xmlns:c="sap.ui.core"
 >
 <SelectDialog
-    id="idPopup"
+    
 >
     
 </SelectDialog>
